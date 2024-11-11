@@ -1,0 +1,150 @@
+/* Banner */
+
+.banner {
+    display: grid;
+    gap: 1rem;
+}
+
+.banner img:nth-child(1) { /*Seleciona a imagem a ser alterada de posição*/
+    grid-column: 1/3; /*Início e fim da coluna onde a imagem ficará*/
+}
+
+.banner img:nth-child(4) {
+    grid-column: 2/3; /*Início e fim da coluna onde a imagem ficará*/
+    grid-row: 2/4;/*Início e fim da linha onde a imagem ficará*/
+}
+
+/* Eventos */
+.eventos__item {
+    display: grid;
+    grid-template-columns: 1fr auto;/*Divide o
+    template em colunas de grid e coloca os tamanhos específicos.
+    O primeiro valor terá uma pequena fração e o que sobrar será para
+    o restante*/
+    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-areas:/*Cria um template de itens dentro da grid*/
+    "imagem imagem"
+    "nome nome"
+    "data data"
+    "local botao";
+}
+
+.eventos__item img { /*Define os itens dentro de suas respectivas áreas*/
+    grid-area: imagem;
+}
+
+.eventos__item h3 { /*Define os itens dentro de suas respectivas áreas*/
+    grid-area: nome;
+    align-self: center;
+    margin-top: 0.5rem;
+}
+
+.eventos__item h4 { /*Define os itens dentro de suas respectivas áreas*/
+    grid-area: data;
+}
+
+.eventos__item h5 { /*Define os itens dentro de suas respectivas áreas*/
+    grid-area: local;
+    align-self: end;
+}
+
+.eventos__item button { /*Define os itens dentro de suas respectivas áreas*/
+    grid-area: botao;
+}
+
+/* Agenda */
+
+.agenda__item img {
+    grid-area: imagem;
+}
+
+.agenda__informacoes {
+    grid-area: data;
+}
+
+.agenda__atracao {
+    grid-area: info;
+}
+
+@media (min-width: 720px) {
+
+    /* Banner */
+    .banner {
+        grid-template-columns: calc(50% - 0.75rem) auto auto;/*Divide o
+        banner em colunas de grid e coloca os tamanhos específicos.
+        O primeiro valor desconta o gap das laterais*/
+        column-gap: 1.5rem;
+    }
+
+    .banner img:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    .banner img:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .banner img:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .banner img:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .categorias {
+        display: grid;
+        grid-template-areas: 
+        "titulo titulo"
+        "lista destaque"
+        "lista imagem";
+        
+     row-gap: 1.5rem;
+  
+     column-gap: 1.5rem;
+     grid-template-columns: calc(50% - 0.75rem);
+     grid-template-rows: auto 1fr auto;
+  
+     }
+  
+     .categorias__titulo {
+        grid-area: titulo;
+     }
+  
+     .categorias__lista {
+        grid-area: lista;
+     }
+  
+     .categorias__destaques {
+        grid-area: destaque;
+     }
+  
+     .categorias__imagem {
+        grid-area: imagem;
+     }
+
+     .eventos__item img {
+        grid-area: imagem;
+    }
+    
+    .__informacoes {
+        grid-area: data;
+    }
+    
+    .agenda__atracao {
+        grid-area: info;
+    }
+
+     .eventos__lista {
+        display: grid;
+        column-gap: 1.5rem;
+        row-gap: 1.5rem;
+        grid-template-columns: repeat(4, auto);
+    }
+}

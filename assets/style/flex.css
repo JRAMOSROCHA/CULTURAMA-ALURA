@@ -1,0 +1,126 @@
+/* Cabeçalho */
+
+.menu {
+    display: flex; /*Tipo de visualização dos elementos, flex ou grid*/
+    justify-content: space-evenly; /*Tipo de espaçamento dos elementos*/
+    align-items: center; /*Tipo de alinhamento dos elementos*/
+    flex-wrap: wrap; /*Tipo de quebra dos elementos para linha de baixo*/
+    column-gap: 33px; /*Espaçamento somente das colunas*/
+}
+
+/* Eventos */
+
+.eventos, .agenda {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.eventos__botao, .agendas__botao {
+    margin-top: 1em;
+}
+
+/* Categorias */
+
+.categorias__lista {
+    display: flex;
+    flex-direction: column;/*Direção dos elementos em tela*/
+    row-gap: 0.5rem;/*Espaçamento de uma linha a outra*/
+}
+
+/* Destaques */
+
+.destaques {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.destaques__barra {
+    flex-grow: 1;/*Faz a barra crescer ou
+    diminuir automatizamente independente do tamanho da tela*/
+}
+
+/* Eventos */
+.eventos__lista {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+}
+
+.eventos__item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Agenda */
+
+.agenda__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+}
+
+.agenda__item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.agenda__informacoes, .agenda__atracao{
+    width: 50%;
+ }
+
+ /* Rodapé */
+
+ .rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.rodape__logo {
+    align-self: end;
+}
+
+@media (min-width: 720px) {
+
+    /* Cabeçalho */
+
+    .menu {
+        column-gap: 75px;
+    }
+
+    .eventos, .agenda {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Categorias */
+
+    .categorias__lista {
+        flex-wrap: wrap;/*Quebra a coluna em duas*/
+        column-gap: 1.5rem;/*Espaçamento de uma coluna a outra*/
+        row-gap: 1rem;/*Espaçamento de uma linha a outra*/
+    }
+}
+
+@media (min-width: 1920px) {
+    .eventos__lista {
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+    }
+
+    .agenda__lista {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
